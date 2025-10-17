@@ -2,62 +2,60 @@
 
 ## 🎬 Introducción
 
-**CloneFix** es una aplicación web de interfaz de usuario (UI) inspirada en plataformas populares de streaming (como Netflix), desarrollada utilizando **HTML**, **CSS** (con **Bootstrap**) y **JavaScript** puro.
+**CloneFix** es una aplicación web de interfaz de usuario (UI) inspirada en plataformas populares de streaming, desarrollada utilizando **HTML**, **CSS** (con **Bootstrap**) y **JavaScript** puro.
 
-El propósito del proyecto es replicar la experiencia de navegación con una sección destacada principal (Hero) y filas de contenido deslizable (Rails), consumiendo datos reales de series de televisión mediante una API pública.
+El proyecto consume datos reales de series de televisión mediante una API pública, simulando la experiencia de navegación con una sección destacada principal (Hero) y filas de contenido deslizable (Rails).
 
 ***
 
-## ✨ Características Principales
+## ✨ Características Principales (a partir de la Versión 2.0)
 
 El proyecto ofrece las siguientes funcionalidades clave:
 
-* **Sección Hero Dinámica:** Muestra aleatoriamente una serie de televisión de las tendencias con su título, un extracto de la sinopsis y un fondo de imagen grande.
-* **Carruseles de Contenido (Rails):** Muestra filas de pósteres de series deslizable horizontalmente (`.rail`), como la sección de "Tendencias".
+* **Sección Hero Dinámica:** Muestra aleatoriamente una serie de televisión destacada con su título, sinopsis y una imagen de fondo.
+* **Carruseles de Contenido (Rails):** Muestra filas de pósteres de series deslizable horizontalmente, cargando las tendencias de la API al inicio.
 * **Funcionalidad de Búsqueda:** Permite buscar series a través de un formulario en la barra de navegación, renderizando los resultados en una nueva fila.
-* **Modal de Detalle:** Al hacer clic en un póster, se abre una ventana modal con información detallada de la serie, incluyendo: géneros, sinopsis, rating, idioma, estado y un enlace al sitio oficial.
-* **Diseño UI:** Tema oscuro con acentos de color rojo `#e50914` y tipografía clara.
+* **Modal de Detalle:** Al hacer clic en un póster, se abre una ventana modal con información detallada de la serie (géneros, rating, sinopsis, etc.).
+* **Diseño UI:** Tema oscuro con acentos de color rojo (`#e50914`).
 
 ***
 
-## 🛠️ Tecnologías Utilizadas
+## ⚙️ Versiones del Sistema
 
-* **HTML5**
-* **CSS3** (Estilos personalizados y tema oscuro)
-* **JavaScript** (Vanilla JS para la lógica de la aplicación)
-* **Bootstrap v5.3.8** (Para la estructura, navbar, modales y diseño responsivo)
+La documentación detallada y el código de cada versión se encuentran en sus respectivos archivos Markdown:
+
+-   👍[Creación del proyecto, versión 1](Version1.md)
+-   👍[Implementación de funcionalidad, versión 2](Version2.md)
+
+***
+
+## 📜 Historial de Versiones
+
+### 1.0 - Estructura Base y Diseño
+Esta versión inicial se enfocó en establecer la base visual y la estructura del proyecto.
+
+* **HTML/CSS:** Se definió la estructura de la interfaz (Navbar, Hero, Main container, Modal y Footer) y se aplicaron los estilos para el tema oscuro, los carruseles (`.rail`) y las tarjetas de pósteres.
+* **JavaScript:** El archivo de script se incluyó vacío o con un marcador de posición, sin funcionalidad de la aplicación.
+
+### 2.0 - Funcionalidad Completa e Integración API
+Esta versión convierte el proyecto en una aplicación web dinámica al añadir la lógica de JavaScript.
+
+* **Integración API:** Se implementó la conexión con la **API de TVmaze** para la carga inicial de tendencias y el manejo de la función de búsqueda (`wireSearch()`).
+* **Renderizado Dinámico:** Se crearon funciones como `renderHero()`, `renderRow()`, `posterCard()`, y `openDetail()` para manipular el DOM y mostrar la información obtenida de la API.
+* **Funciones de Utilidad:** Se añadieron funciones de seguridad y limpieza como `escapeHTML()` y `stripHTML()`.
 
 ***
 
 ## 📡 API
 
-El proyecto obtiene todos sus datos de series de TV (títulos, pósteres, sinopsis, detalles) desde la **API pública de TVmaze**.
+El proyecto obtiene todos sus datos de series de TV desde la **API pública de TVmaze**.
 
-### Endpoints Clave:
-
-* **API Base:** `https://api.tvmaze.com/search/shows?q=`
-* **Tendencias (Inicialización):** `https://api.tvmaze.com/shows?page=1`
-* **Detalle de Serie:** `https://api.tvmaze.com/shows/{id}`
-
-***
-
-## 🚀 Uso Local
-
-Para ver el proyecto en funcionamiento, sigue estos sencillos pasos:
-
-1.  Asegúrate de tener los archivos `index.html`, `js/app.js` y `css/app.css` en sus ubicaciones relativas.
-2.  Abre el archivo `index.html` directamente en tu navegador web.
-
-Dado que la aplicación utiliza peticiones `fetch` para consumir la API, no requiere de un servidor web local para su funcionamiento básico.
+* **API Base de Búsqueda:** `https://api.tvmaze.com/search/shows?q=`
+* **Endpoint de Detalles:** `https://api.tvmaze.com/shows/{id}`
 
 ***
 
 ## 👤 Créditos
 
 * **Datos de Series de TV:** Proporcionados por la [API de TVmaze](https://www.tvmaze.com/).
-* **Diseño UI:** [Bootstrap](https://getbootstrap.com/).
-
-*(El archivo existente incluía una sección de versiones, que puedes mantener o expandir)*:
-### Versiones del sistema
-
-- 👍[Creacion del proyecto, version 1](Version1.md)
+* **Framework CSS:** [Bootstrap](https://getbootstrap.com/).
